@@ -175,7 +175,7 @@ Aspekte des Themas widmete.
 
 Der Nachmittag befasste sich dann mit allen technischen Aspekten von SEO, was für mich und meine Abteilungs-Kollegen eine besonders hohe Relevanz hatte und sehr gut aufbereitet wurde.
 
-\section{Kalenderwoche 28} \label{sec:kw2}
+\section{Kalenderwoche 28} \label{sec:kw28}
 
 In dieser Woche befasste ich mich zunächst mit der Backend-Seitigen Anpassungen, die für den A/B-Test nötig waren.
 
@@ -193,15 +193,29 @@ Neben meiner Tätigkeit für Gameplan A wurde ich von einem Projektmanager, der 
 
 Da ich bereits in einem Projekt im Fach "Mobile Computing" in Kontakt mit Geo-Json-Daten gekommen bin konnte ich Fragen bezüglich der Daten zügig und zur Zufriedenheit des Kunden in einem Meeting klären.
 
-Für den A/B-Test habe ich mich nach den Ergänzungen im Backend Angefangen die gespeicherten Titel überall da im Template mitzugeben, wo der Titel eines Blogs auftaucht. Ich habe es in ein Attribut namens "data-test-ab-headline-X" des entsprechenden HTML-Tags geschrieben um mittels CSS darauf zugreifen zu können.
+Für den A/B-Test habe ich mich nach den Ergänzungen im Backend Angefangen die gespeicherten Titel überall da im Template mitzugeben, wo der Titel eines Blogs auftaucht. Ich habe es in ein Attribut namens "data-test-ab-headline-X" des entsprechenden HTML-Tags geschrieben um mittels der CSS-Funktion attr() darauf zugreifen zu können.
 
 Um den Titel schlussendlich mittels CSS auszutauschen habe ich in einem zusätzlichen .scss-File die Schriftgröße des Originalen Titels auf Null gesetzt und dann mittels einer Pseudo-Klasse den Content der Headline mit dem Wert des oben genannten Attributes gesetzt. 
 
-\section{Kalenderwoche 29} \label{sec:kw2}
+Das oben beschriebene Austauschen findet selbstverständlich nur Anwendung wenn durch Optimize die in Kapitel \ref{sec:kw27} beschriebene Klasse gesetzt wird. Passiert dies nicht hat der Nutzer das Original erhalten und sieht dementsprechend auch die Originalen Headlines.
+
+\section{Kalenderwoche 29} \label{sec:kw29}
 
 
 
 \section{Kalenderwoche 30} \label{sec:kw3}
+
+Zum Abschluss der Woche kehrte ich auf Kundenwunsch zurück zur Adidas Corporate Seite zurück um zusätzlich entstandene Anforderungen umzusetzen.
+
+Der Kunde wünschte das die von mir Implementierten Checkboxen initial alle gecheckt sein sollten und um ihre Medien auch teilen zu können wünschten sie die Implementierung von sogenannten Deeplinks.
+
+Diese Deeplinks ermöglichen das teilen einer Seite wobei der Empfänger durch in der Url codierte Informationen genau den Zustand einer Seite ansehen kann, den der Absender ihm zukommen lassen möchte.
+
+Diese zusätzlichen Informationen in der Url sind nötig, da eine Seite nicht bei jeder Interaktion neu geladen wird sondern durch Javascript verändert wird. Teilt man nun den Link ohne zusätzliche Informationen würde man nur die Seite in ihrem initialenZustand erhalte, was unter Umständen nicht gewünscht ist.
+
+Die Interaktion wird dann durch ein Deeplink-Modul, welches die Informationen aus der Url liest virtuell wiederholt.
+
+
 \section{Kalenderwoche 31} \label{sec:kw3}
 \section{Kalenderwoche 32} \label{sec:kw3}
 \section{Kalenderwoche 34} \label{sec:kw3}
