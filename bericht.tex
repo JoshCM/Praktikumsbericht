@@ -201,7 +201,31 @@ Das oben beschriebene Austauschen findet selbstverständlich nur Anwendung wenn 
 
 \section{Kalenderwoche 29} \label{sec:kw29}
 
+In Fortsetzung zu meiner Arbeit am A/B-Test bezüglich dem Austausch der Blog-Post-Titel setzte ich mich in dieser Woche zunächst an die Behandlung der Sonderfälle der Headlines, die ebenfalls durch das eigens für den Test hinzugefügte CSS abgedeckt werden müssen.
 
+Ein Beispiel dafür ist die sich ändernden Schriftgrößen, die sich nach der Breite des Viewports richten.
+
+Durch die Nutzung der CSS-Pseudo-Klasse wird die ursprüngliche Font-Size überschrieben und muss explizit für die Pseudo-Klasse erneut angegeben werden.
+
+Ein Weiterer Sonderfall ist ein kleiner Teaser für den nächsten Blog-Post der Auftaucht wenn man den Aktuellen schon fast durchgelesen hat.
+
+Der Titel des angeteaserten Artikels wird mittels Javascript in den Teaser geschrieben. Um diesen Titel auszutauschen kam ich nicht drum herum ein kleines Javascript-Modul zu schreiben, welches erkennt ob es sich bei der präsentierten Seite um das Original oder die Variante handelt und dem entsprechend den benötigten Titel in den Teaser schreibt.
+
+Ich habe alle, extra für den Test angelegten, .js- oder .scss-Dateien deutlich mit dem Präfix "gpa-ab-test-" im Namen gekennzeichnet sodass sie zu einem späteren Zeitpunkt, nach Ablauf des Tests, einfach gefunden und identifiziert werden können um sie zu entfernen, da sie im Normalfall nicht benötigt werden.
+
+In der Mitte der Woche wurde ich für einen dringenden Auftrag für den neu gewonnen Kunden Aldi vom A/B-Test abgezogen und gebeten für einen Usability-Test einen Klickdummy zu entwickeln.
+
+Die herkömmlichen Methoden, wie zum Beispiel die Verwendung der bekannten inVision Software gelang auf Grund der gehäuften Nutzung von Slidern im Klickdummy, an ihre Grenzen.
+
+Zusammen mit einem Senior Developer setzte ich ein möglichst unkompliziertes Webpack Projekt auf, welche eine schnelle Entwicklung der Dummys ermöglichte und arbeitete Hand in Hand mit den Konzeptern und Gestaltern daran sowohl den Status Quo als auch die verbesserte Version des selben umzusetzen.
+
+Es handelte sich dabei um die Angebotsübersicht innerhalb der Aldi App, welche durch reduzierten Einsatz von Slidern für den Nutzer einfacher zu bedienen werden soll.
+
+Da der Test bei einem externen Dienstleister laufen sollte mussten wir beide Versionen des Klickdummys anschließend noch auf einem öffentlich zugänglichen Server mittels FTP deployen.
+
+Zum Abschluss der Woche beschäftige ich mich noch mit dem sorgfälltigen Testen meiner A/B-Test implementierung.
+
+Ich überprüfte sowohl die Browser-Kompatibilität als auch die einwandfreie Funktion bei verschiedenen Bildschirmauflösungen.
 
 \section{Kalenderwoche 30} \label{sec:kw3}
 
@@ -209,7 +233,7 @@ Zum Abschluss der Woche kehrte ich auf Kundenwunsch zurück zur Adidas Corporate
 
 Der Kunde wünschte das die von mir Implementierten Checkboxen initial alle gecheckt sein sollten und um ihre Medien auch teilen zu können wünschten sie die Implementierung von sogenannten Deeplinks.
 
-Diese Deeplinks ermöglichen das teilen einer Seite wobei der Empfänger durch in der Url codierte Informationen genau den Zustand einer Seite ansehen kann, den der Absender ihm zukommen lassen möchte.
+Diese Deeplinks ermöglichen das teilen einer Seite wobei der Empfänger durch, in der Url codierte, Informationen genau den Zustand einer Seite ansehen kann, den der Absender ihm zukommen lassen möchte.
 
 Diese zusätzlichen Informationen in der Url sind nötig, da eine Seite nicht bei jeder Interaktion neu geladen wird sondern durch Javascript verändert wird. Teilt man nun den Link ohne zusätzliche Informationen würde man nur die Seite in ihrem initialenZustand erhalte, was unter Umständen nicht gewünscht ist.
 
