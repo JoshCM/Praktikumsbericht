@@ -47,10 +47,9 @@
 \begin{document}
 
 \maketitle
-
-% \begin{abstract}
-
-% \end{abstract}
+\begin{abstract}
+Der Bericht zum absolvierten Pflichtpraktikum bei Scholz \& Volkmer Wiesbaden.
+\end{abstract}
 \newpage
 \tableofcontents % das Inhaltsverzeichnis
 \newpage % neue Seite, muss bei einem Artikel eigentlich nicht sein
@@ -149,11 +148,41 @@ Durch weiteres Debugging fiel schlussendlich auf, dass bereits im Template das s
 
 Eine Korrektur des Fehlers im Template eliminierte den Bug und ermöglichte eine Korrekte anzeige in allen gängigen Browsern.
 
-\section{Kalenderwoche 27} \label{sec:kw2}
+\section{Kalenderwoche 27} \label{sec:kw27}
 
+In der Kalenderwoche 27 begann meine Arbeit an dem Projekt Gameplan A. Dabei handelt es sich um den Blog von Adidas der sich an sogenannte Business-Athleten richten soll.
 
+Ich wurde mit der Aufgabe Betraut drei Umfangreiche A/B-Tests auf der Seite zu implementieren, die dazu dienen sollen den Blog, der auch zur Akquise von jungen aufstrebenden Mitarbeitern für Adidas, für Nutzer attraktiver zu gestallten.
+
+Zu beginn der Woche erhielt ich ein Briefing zu den geplanten A/B-Tests durch das Projektmanagement und das Konzept.
+
+Der erste umzusetzende Test beschäftigte sich mit der Tonalität des Blogs. Die These die es zu überprüfen galt ist, dass eine andere Formulierung der Headlines zu mehr Pageviews pro Session führt.
+
+Die Anforderung lautete einen A/B-Test mit Hilfe von Google Optimize zu entwickeln, der diese These entweder bestätigt oder verwirft.
+
+Google Optimize ist ein Tool welches erlaubt A/B-Tests durchzuführen und dabei auch andere Google Tools wie den Tagmanager und/oder Google Analytics einzubinden. Dadurch eigente sich Optimize besonders gut für die Verwendung auf Gameplan A, da beide genannten Tools verwendet werden.
+
+Optimize ermöglicht durch einen eigenen Editor zusätzliches CSS und/oder Javascript für eine Variante der Seite zu injizieren.
+
+Da es darum ging auf der gesamten Seite alle Headlines der Blog-Posts zu ändern und dies über Javascript sehr rechenintensiv gewesen wäre entschieden wir uns für eine Implementierung über das CSS der Seite.
+
+Wir nutzten die Möglichkeiten von Optimize und setzten bei der Variante der Seite eine CSS-Klasse im Body-Tag namens "gpa-test-ab-headline-X" wodurch wir mit zusätzlichem CSS die wir dann bereits mit der Seite an den Client liefern auf die Variante reagieren können und alle Headlines des Blogs austauschen können.
+
+Am Ende der Woche besuchte ich eine SEO Schulung welche von einem SEO Experten gehalten wurde, der seitens der Agentur engagiert wurde um den Kunden eine bessere Performance bei Suchmaschinen bieten zu können.
+
+Die Schulung erstreckte sich über einen gesamten Tag, wobei sich der Vormittag einem Überblick über das Thema SEO, und der konzeptionellen
+Aspekte des Themas widmete. 
+
+Der Nachmittag befasste sich dann mit allen technischen Aspekten von SEO, was für mich und meine Abteilungs-Kollegen eine besonders hohe Relevanz hatte und sehr gut aufbereitet wurde.
 
 \section{Kalenderwoche 28} \label{sec:kw2}
+
+In dieser Woche befasste ich mich zunächst mit der Backend-Seitigen Anpassungen, die für den A/B-Test nötig waren.
+
+Bei dem Backend handelt es sich bei Gameplan A um eine stark auf Kundenbedürnisse angepasste Version von Wordpress, die mit einem komplett eigenentwickeltem Theme operiert.
+
+Um ein Austauschen der Titel zu erlauben müssen die Editoren des Blogs zunächst 
+
 \section{Kalenderwoche 29} \label{sec:kw2}
 \section{Kalenderwoche 30} \label{sec:kw3}
 \section{Kalenderwoche 31} \label{sec:kw3}
