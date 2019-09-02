@@ -108,7 +108,7 @@ Nach meiner Orientierung begann ich mit der Umsetzung des Updates, indem ich zun
 
 Der nächste Schritt beinhaltete Implementierung der Filter-Funktionalität der Checkboxen, wobei sich das Hauptproblem darin ergab, dass statt wie im Falle des Dropdown nun nicht mehr nur eine Kategorie Medien ausgewählt werden kann sondern mehrere oder sogar gar keine Checkbox ausgewählt sein kann.
 
-\section{Kalenderwoche 25} \label{sec:kw2}
+\section{Kalenderwoche 25} \label{sec:kw25}
 
 Um das Problem der Mehrfachfilterung der Medien durch die Checkboxen zu lösen habe ich mich intensiv mit dem bereits vorhandenen Filter-Modul beschäftigt.
 
@@ -129,17 +129,35 @@ Dies ist vor allem problematisch, da viele Rechnerau Seiten des Kunden diesen Br
 
 Ich behob die durch die Code-Review entdeckten Fehler und nutzte die Gelegenheit um noch weitere kleine Verbesserungen vorzunehmen, die ich durch mein verbessertes Verständnis für Javascript und das benutzte Framework entdeckt habe.
 
-\section{Kalenderwoche 26} \label{sec:kw2}
+\section{Kalenderwoche 26} \label{sec:kw26}
 
+Da ich mich nun in der Projekt Adidas Corporate Seite, und insbesondere in das Medien-Archiv, eingearbeitet hatte übernahm ich weitere Tickets diesbezüglich.
 
+Ich kümmerte mich in dieser Woche um einen bekannten Bug, der zur Auswirkung hatte, dass wenn man sich das Medien-Archiv im apple-eigenen Browser, Safari, anschauen wollte, keine Bilder zu sehen waren.
+
+Ich begann damit den Code zu debuggen und mir parallel dazu sowohl die für die Bilder benutzten Templates, als auch das für das laden der Bilder verantwortliche Javascript-Modul zu Gemüte zu führen.
+
+Mir fiel beim Debuggen auf, dass wenn ich das "loaded"-Event für die Bilder händisch abfeuerte, alle Bilder korrekt angezeigt wurden.
+
+Dieses Verhalten wies darauf hin, dass die Bilder bereits alle geladen waren, jedoch auf Grund des fehlenden Events "hidden" blieben. Dies entsprach dem Code den ich im Bilder-Modul vorfand, wo mit einem Eventlistener auf das Laden der Bilder gewartet wurde um dann alle gleichzeitig anzeigen zu können.
+
+Das Laden der Bilder übernimmt ein Lazyloader, welcher das src-Attribut der Images erst setzt, wenn sie benötigt werden, sodass unnötige clientseitige Operationen und Request gespart werden können.
+
+Die Vermutung lag nahe, dass das Event gefeuert wird noch bevor das Bilder-Modul den Eventlistener anmelden kann.
+
+Durch weiteres Debugging fiel schlussendlich auf, dass bereits im Template das src-Attribut gesetzt wurde anstatt die Quelle in das data-src-Attribut zu schreiben, was zum laden der Bilder führte noch bevor das Javascript initialisiert war wodurch nicht auf das Event reagiert werden konnte, da es nicht gefeuert wurde, da durch das bereits gesetzte Attribut der Lazyloader übergangen wurde.
+
+Eine Korrektur des Fehlers im Template eliminierte den Bug und ermöglichte eine Korrekte anzeige in allen gängigen Browsern.
 
 \section{Kalenderwoche 27} \label{sec:kw2}
+
+
+
 \section{Kalenderwoche 28} \label{sec:kw2}
 \section{Kalenderwoche 29} \label{sec:kw2}
 \section{Kalenderwoche 30} \label{sec:kw3}
 \section{Kalenderwoche 31} \label{sec:kw3}
 \section{Kalenderwoche 32} \label{sec:kw3}
-\section{Kalenderwoche 33} \label{sec:kw3}
 \section{Kalenderwoche 34} \label{sec:kw3}
 \section{Fazit} \label{sec:faz}
 
