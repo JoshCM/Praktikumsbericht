@@ -1,0 +1,133 @@
+\documentclass[11pt]{article} % ein Artikel in 11-Punkt Schrift
+% wie man sich schon denkt leitet % einen Kommentar bis Zeilenende ein
+
+\usepackage[german]{babel} % deutsch, deutsche Rechtschreibung
+\usepackage[utf8]{inputenc} % Unicode Text 
+\usepackage[T1]{fontenc} % Umlaute und deutsches trennen
+\usepackage{mathptmx} % Times New Roman, gewohnter Font
+\usepackage{courier} % Schreibmaschinenfont schicker
+\usepackage[scaled=.95]{helvet} % was serifenloses wenn gebraucht
+\usepackage{graphicx} % wir wollen Bilder einfügen
+
+\usepackage{listings} % Schöne Quellcode-Listings
+\lstset{basicstyle=\sffamily, columns=[l]flexible, mathescape=true, 
+  showstringspaces=false, numbers=left, numberstyle=\tiny}
+\lstset{language=python} % und nur schöne Programmiersprachen ;-)
+% und eine eigene Umgebung für Listings
+\usepackage{float}
+\newfloat{listing}{htbp}{scl}[section]
+\floatname{listing}{Listing}
+
+% Auch wenn es anrüchig ist, man kann den Platz etwas mehr ausnützen
+\usepackage[paper=a4paper,width=14cm,left=35mm,height=22cm]{geometry}
+\usepackage{setspace}
+\linespread{1.5} % nicht ganz anderthalbzeilig, nur ein bisschen mehr Platz
+\setlength{\parskip}{0.5em} % kleiner Paragraphenabstand
+\setlength{\parindent}{0em} % im Deutschen Einrückung nicht üblich, leider
+
+% Seitenmarkierungen 
+\usepackage{fancyhdr} % Schickere Header und Footer
+\pagestyle{fancy}
+% Zeichensatz für Header/Footer
+\newcommand{\phv}{\fontfamily{phv}\fontseries{m}\fontsize{9}{11}\selectfont}
+\fancyhead[L]{\phv Praktikumsbericht} 
+\fancyhead[R]{\phv \thepage}
+\fancyfoot[L]{\phv Hochschule RheinMain}
+\fancyfoot[C]{\ } % keine Seitenzahl unten
+\fancyfoot[R]{\phv Medieninformatik}
+
+% Ein spezielles Paket zum Aufteilen des Literaturverzeichnisses
+\usepackage{bibtopic}
+\usepackage{url} % wir wollen eine URL anzeigen
+
+\title{Praktikumsbericht}
+\author{Joshua Coelho Mestre}
+\date{\today} % oder \today für heute
+
+\begin{document}
+
+\maketitle
+
+% \begin{abstract}
+
+% \end{abstract}
+\newpage
+\tableofcontents % das Inhaltsverzeichnis
+\newpage % neue Seite, muss bei einem Artikel eigentlich nicht sein
+
+\section{Einleitung} \label{sec:einf}
+Scholz \& Volkmer ist eine Kreativagentur zur digitalen Markenführung mit ungefähr 130 Mitarbeitern und Firmensitz in Wiesbaden und Berlin.
+
+Die Agentur arbeitet im Kundenauftrag und erstellt Websites, Mobile Apps und weiter digitale Produkte zur Verbesserung der digitalen Präsenz.
+
+In meiner Zeit bei Schovo arbeitete ich vorwiegend als Frontend Entwickler für den Kunden Adidas, der neben seiner Corporate Seite auch einen Blog bei Schovo entwickeln lässt.
+
+Während meines Praktikums war ich für die Umsetzung eines umfangreichen A/B-Tests der auf dem oben erwähnten Blog namens "Gameplan A" durchgeführt werden sollte.
+
+
+\newpage
+
+\section{Kalenderwoche 23} \label{sec:kw23}
+
+Das Praktikum begann mit einem großen Meeting bei dem ich die Gelegenheit bekam mich der ganzen Firma vorzustellen.
+
+Darauf folgte der Erhalt meines Arbeitsrechners in der IT-Abteilung sowie das treffen mit meiner Praktikumsbetreuerin.
+
+Meine Praktikumsbetreuerin zeigte mir meinen Arbeitsplatz und gab mir eine Einführung in die firmeneigene Softwarestruktur und Abläufe. Darunter zum Beispiel den zum Dateienaustausch genutzten Fileserver, das häufig genutzte Ticketsystem Jira und das für den Informationsaustausch genutzte Confluence.
+
+Ich machte mich danach mit den eben genannten Systemen vertraut und richtete meinen Arbeitsrechner ein.
+
+Am folgenden Tag durfte ich mich mit dem Code der firmeneigenen Website vertraut machen. Dazu klonte ich das, das sich auf dem Gitlab-Server befindliche Projekt, und lies es mittels Docker-Container auf meinem Arbeitsrechner laufen.
+
+Das Setup des Projekts erfolgte mittels im Repository enthaltener Scripte.
+
+Da geplant war mich als Backend-Developer einzusetzen und es sich bei der S-V.de Webseit um ein Django Projekt handelt, absolvierte ich den Rest der Woche ein detailliertes Django Tutorial um meine im Studium erhaltenen Django-Kenntnisse aufzufrischen und zu verbessern.
+
+Das Ziel des Tutorials war es, abgesehen von der Verbesserung meiner Django Kenntnisse, eine Website zu erstellen, die es den Usern erlaubt Links zu posten und diese einer Bestimmten Category zuzuordnen.
+
+Zusätzlich dazu sollte es den Usern ermöglicht werden direkt auf der Seite das Internet nach neuen Seiten anhand von Suchbegriffen zu durchforsten und bereits vorhandene Links zu "liken".
+
+Das Tutorial befasste sich mit allen relevanten Gesichtspunkten der Webentwicklung und vermittelte zusätzlich zu dem Basiswissen der Django-Programmierung auch Inhalte wie die Nutzung von CSS-Frameworks wie Bootstrap und die Nutzung externer APIs um die Funktionalität der Webseite um eine Websuche zu erweitern. 
+
+\section{Kalenderwoche 24} \label{sec:kw24}
+
+
+
+\section{Kalenderwoche 25} \label{sec:kw2}
+\section{Kalenderwoche 26} \label{sec:kw2}
+\section{Kalenderwoche 27} \label{sec:kw2}
+\section{Kalenderwoche 28} \label{sec:kw2}
+\section{Kalenderwoche 29} \label{sec:kw2}
+\section{Kalenderwoche 30} \label{sec:kw3}
+\section{Kalenderwoche 31} \label{sec:kw3}
+\section{Kalenderwoche 32} \label{sec:kw3}
+\section{Kalenderwoche 33} \label{sec:kw3}
+\section{Kalenderwoche 34} \label{sec:kw3}
+\section{Fazit} \label{sec:faz}
+
+\newpage
+
+
+\newpage
+
+% Listen, wenn überhaupt!, bitte ans Ende und nicht an den Anfang
+\listoffigures % Liste der Abbildungen 
+\listoftables % Liste der Tabellen
+% Als letztes noch das Literaturverzeichnis
+\bibliographystyle{plainurl} % mit url
+% so wäre es ganz einfach!
+%\bibliography{ausarb,online}
+% dann mit "bibtex ausarb" bibtexen und das Literaturverzeichnis ist da
+% z.B. mit bibtopic kann man die Quellen sauber trennen
+\begin{btSect}{ausarb}
+\section*{Literaturverzeichnis}
+\btPrintCited
+\end{btSect}
+\begin{btSect}{online}
+\section*{Online-Quellen}
+\btPrintCited
+\end{btSect}
+% dann mit "bibtex ausarb1" und "bibtex ausarb2" arbeiten.
+% Wir verwenden ausarb<i> weil die Dokumenten-Datei ausarb.tex ist.
+
+\end{document}
