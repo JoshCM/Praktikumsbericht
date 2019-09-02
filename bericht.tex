@@ -73,7 +73,7 @@ Das Praktikum begann mit einem großen Meeting bei dem ich die Gelegenheit bekam
 
 Darauf folgte der Erhalt meines Arbeitsrechners in der IT-Abteilung sowie das treffen mit meiner Praktikumsbetreuerin.
 
-Meine Praktikumsbetreuerin zeigte mir meinen Arbeitsplatz und gab mir eine Einführung in die firmeneigene Softwarestruktur und Abläufe. Darunter zum Beispiel den zum Dateienaustausch genutzten Fileserver, das häufig genutzte Ticketsystem Jira und das für den Informationsaustausch genutzte Confluence.
+Meine Praktikumsbetreuerin zeigte mir meinen Arbeitsplatz und gab mir eine Einführung in die firmeneigene Softwarestruktur und Abläufe. Darunter zum Beispiel den zum Dateien-Austausch genutzten Fileserver, das häufig genutzte Ticketsystem Jira und das für den Informationsaustausch genutzte Confluence.
 
 Ich machte mich danach mit den eben genannten Systemen vertraut und richtete meinen Arbeitsrechner ein.
 
@@ -91,9 +91,39 @@ Das Tutorial befasste sich mit allen relevanten Gesichtspunkten der Webentwicklu
 
 \section{Kalenderwoche 24} \label{sec:kw24}
 
+Zu Beginn der zweiten Woche beschäftigte ich mich mit einem auf der s-v.de auftretenden Problem.
 
+Im falle einer Unerreichbarkeit der CDN-Server auf denen die Medien der Seite Abgelegt sind sollten diese aus dem Cach des Django Caches geladen werden, was jedoch nicht zuverlässig geschah.
+
+Ich beschäftigte mich zunächst mit der lokalen Reproduktion des Fehler um ihn dann schrittweise zu lokalisieren.
+Auf Grund der Projektlage wurde ich jedoch von dem s-v.de-Projekt abgezogen und auf die Adidas Corporate Seite angesetzt.
+
+Der Kunde wünschte sich ein Update für das sich auf der Seite befindliche Medien-Archiv.
+
+Das für die Filterung der Medienformate benutzte Dropdown-Menü, welches es dem Nutzer ermöglicht aus Audio, Video und Bilder zu wählen, sollte durch drei nutzerfreundlichere Checkboxen ersetzt werden.
+
+Nach dem Klonen und lokalen einrichten des Projekts bestand meine Arbeit zunächst daraus mich mit dem Projekt und dem verwendeten, firmeneigenen Javascript Framework, vertraut zu machen.
+
+Nach meiner Orientierung begann ich mit der Umsetzung des Updates, indem ich zunächst das unerwünschte Dropdown-Menü aus dem betroffenen HTML-Template entfernte und das Markup für die geforderten Checkboxen inklusive des, von der Konzepterin geforderten, Stylings hinzufügte.
+
+Der nächste Schritt beinhaltete Implementierung der Filter-Funktionalität der Checkboxen, wobei sich das Hauptproblem darin ergab, dass statt wie im Falle des Dropdown nun nicht mehr nur eine Kategorie Medien ausgewählt werden kann sondern mehrere oder sogar gar keine Checkbox ausgewählt sein kann.
 
 \section{Kalenderwoche 25} \label{sec:kw2}
+
+Um das Problem der Mehrfachfilterung der Medien durch die Checkboxen zu lösen habe ich mich intensiv mit dem bereits vorhandenen Filter-Modul beschäftigt.
+
+Die Anforderung war das bereits existierende Modul mit möglichst geringer Kopplung und möglichst minimal inversiv dahingehend zu verändern, dass es mit der Eingabe über die Checkboxen die gewünschten Medien einblendet. 
+
+Da das Filter-Modul mehrfach auf der Seite benutzt wird und bis dahin ausschließlich über die Dropdown-Menüs gesteuert wurde stand ich vor der Herausforderung die Funktionalität des Moduls um die Checkbox zu erweitern jedoch das verarbeiten der Eingaben durch die Dropdowns nicht zu behindern.
+
+Um der Anforderung gerecht zu werden habe ich innerhalb des Moduls eine Funktion implementiert, die im Falle einer Eingabe durch die Checkboxen aufgerufen wird und diese soweit verarbeitet, dass sie danach von wie gewohnt von dem Filter weiter genutzt werden kann.
+
+Durch die selbst implementierte Funktion musste ich anschließend nur noch geringfügige Anpassungen an dem Modul vornehmen, da das nun nicht mehr nur noch ein Filter aktiv sein kann sondern mehrere.
+
+Die Änderung beschränkte sich auf die Erweiterung des Moduls um die Möglichkeit durch ein Filter-Array zu iterieren statt nur ein einziges Filterwort zu akzeptieren. 
+
+
+
 \section{Kalenderwoche 26} \label{sec:kw2}
 \section{Kalenderwoche 27} \label{sec:kw2}
 \section{Kalenderwoche 28} \label{sec:kw2}
