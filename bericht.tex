@@ -179,11 +179,28 @@ Der Nachmittag befasste sich dann mit allen technischen Aspekten von SEO, was f�
 
 In dieser Woche befasste ich mich zunächst mit der Backend-Seitigen Anpassungen, die für den A/B-Test nötig waren.
 
-Bei dem Backend handelt es sich bei Gameplan A um eine stark auf Kundenbedürnisse angepasste Version von Wordpress, die mit einem komplett eigenentwickeltem Theme operiert.
+Bei dem Backend handelt es sich bei Gameplan A um eine auf Kundenbedürnisse angepasste Version von Wordpress, die mit einem komplett eigenentwickeltem Theme operiert.
 
-Um ein Austauschen der Titel zu erlauben müssen die Editoren des Blogs zunächst 
+Um ein Austauschen der Titel zu realisieren müssen die Editoren des Blogs zunächst die Möglichkeit haben den einzelnen Blog-Posts einen alternativen Titel zu geben und diesen für den jeweiligen Post zu speichern um den alternativen Titel später an den Client zu liefern.
+
+Ich habe dafür das Blog-Post Formular, mit dem Posts erstellt und bearbeitet werden, im Backend um das Feld "Alternative Headlines" erweitert und die dort hinterlegten Titel dann in den Metadaten des Post gespeichert.
+
+Dies erforderte ein eigenes php-Modul zur Verarbeitung und Speicherung der Daten und die Erstellung eines neues Twig-Templates zur Erstellung der zusätzlichen Feldes.
+
+Die Twig-Templating-Sprache wird im Gameplan A Projekt benutzt um eine klare Trennung des php-Codes und des Markups zu erhalten.
+
+Neben meiner Tätigkeit für Gameplan A wurde ich von einem Projektmanager, der sich primär um den Kunden Fraport kümmert um eine Technische Konsultation gebeten. Dabei ging es darum, dass der Kunde in Besitz neuer Geo-Json Daten des Flughafen Frankfurt gelangt ist und nun die Frage aufkam was genau diese Daten repräsentieren und welche Möglichkeiten zur Visualisierung dieser Daten es gibt.
+
+Da ich bereits in einem Projekt im Fach "Mobile Computing" in Kontakt mit Geo-Json-Daten gekommen bin konnte ich Fragen bezüglich der Daten zügig und zur Zufriedenheit des Kunden in einem Meeting klären.
+
+Für den A/B-Test habe ich mich nach den Ergänzungen im Backend Angefangen die gespeicherten Titel überall da im Template mitzugeben, wo der Titel eines Blogs auftaucht. Ich habe es in ein Attribut namens "data-test-ab-headline-X" des entsprechenden HTML-Tags geschrieben um mittels CSS darauf zugreifen zu können.
+
+Um den Titel schlussendlich mittels CSS auszutauschen habe ich in einem zusätzlichen .scss-File die Schriftgröße des Originalen Titels auf Null gesetzt und dann mittels einer Pseudo-Klasse den Content der Headline mit dem Wert des oben genannten Attributes gesetzt. 
 
 \section{Kalenderwoche 29} \label{sec:kw2}
+
+
+
 \section{Kalenderwoche 30} \label{sec:kw3}
 \section{Kalenderwoche 31} \label{sec:kw3}
 \section{Kalenderwoche 32} \label{sec:kw3}
