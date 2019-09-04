@@ -267,9 +267,22 @@ Ich habe mich für die Umsetzung zunächst wie im Falle des Headline-Tests darum
 
 Die geschieht wieder über das für die Editoren gewohnte Wordpress-Post-Formular, in das ich ein zusätzliches Feld implementiert habe welches es erlaubt ein gänzlich neues Foto hochzuladen, oder ein anderes bereits hochgeladenes Bild auszuwählen.
 
-Um die Quelle des alternativen Bildes für den späteren Austausch in der Variante der Seite für das Javascript zugänglich zu machen ergänzte ich in den Betroffenen Templates die img-Tags um das Attribut "data-v1-src"
+Um die Quelle des alternativen Bildes für den späteren Austausch in der Variante der Seite für das Javascript zugänglich zu machen ergänzte ich in den Betroffenen Templates die img-Tags um das Attribut "data-v1-src" worin ich anschließend die Quelle des alternativen Bildes hinterlegte.
+
+Des ursprüngliche Umsetzungsplan war die alle betroffenen Bilder, mit der Alternativen Quelle im Tag, gleichzeitig durch ein, durch Google Optimize in der Variante der Seite injiziertes Javascript,  auszutauschen.
+
+Da dies, dadurch das es sich bei GameplanA um ein sehr bild-lastigen Blog handelt, jedoch eine sehr rechenintensiver Task ist, war ich gezwungen den Plan zu ändern.
+
+Durch einen signifikanten Performance unterschied wäre die Integrität des Tests bedroht gewesen, da eine Änderung der Messdaten nicht nur auf die Änderung der Bild-Sprache zurück zu führen wäre.
+
+Zudem bestand die Gefahr, das die originalen Bilder geladen würden noch bevor das Script das src-Attribut hätte manipulieren können, womit wieder rum kein Verlass auf die Messdaten sein würde.
+
+Die originalen Bilder könnten dem Benutzer kurze Zeit angezeigt werden bevor sie ausgetauscht würden, was den User irritieren würde, was zum Beispiel ein Anstieg der Bounce-Rate führen könnte.
 
 \section{Kalenderwoche 32} \label{sec:kw3}
+
+
+
 \section{Kalenderwoche 33} \label{sec:kw3}
 \section{Kalenderwoche 35} \label{sec:kw3}
 \section{Fazit} \label{sec:faz}
