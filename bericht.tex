@@ -229,20 +229,49 @@ Ich überprüfte sowohl die Browser-Kompatibilität als auch die einwandfreie Fu
 
 \section{Kalenderwoche 30} \label{sec:kw3}
 
-Zum Abschluss der Woche kehrte ich auf Kundenwunsch zurück zur Adidas Corporate Seite zurück um zusätzlich entstandene Anforderungen umzusetzen.
+Zum Abschluss der Woche kehrte ich auf Kundenwunsch zurück zur Adidas Corporate Seite um neu aufgekommene Anforderungen umzusetzen.
 
-Der Kunde wünschte das die von mir Implementierten Checkboxen initial alle gecheckt sein sollten und um ihre Medien auch teilen zu können wünschten sie die Implementierung von sogenannten Deeplinks.
+Der Kunde wünschte, dass die von mir implementierten Checkboxen initial alle gecheckt sein sollten. Um dies zu gewährleisten war lediglich eine kleine Änderung an dem HTML-Template der Checkboxen von nöten. 
+
+Um gezielter einen bestimmten Zustand des Medien-Archiv teilen zu können wünschteder Kunde sich zusätzlich die Implementierung von sogenannten Deeplinks.
 
 Diese Deeplinks ermöglichen das teilen einer Seite wobei der Empfänger durch, in der Url codierte, Informationen genau den Zustand einer Seite ansehen kann, den der Absender ihm zukommen lassen möchte.
 
-Diese zusätzlichen Informationen in der Url sind nötig, da eine Seite nicht bei jeder Interaktion neu geladen wird sondern durch Javascript verändert wird. Teilt man nun den Link ohne zusätzliche Informationen würde man nur die Seite in ihrem initialenZustand erhalte, was unter Umständen nicht gewünscht ist.
+Diese zusätzlichen Informationen in der Url sind nötig, da eine Seite nicht bei jeder Interaktion neu geladen wird sondern durch Javascript verändert wird. Teilt man nun den Link ohne zusätzliche Informationen würde der Empfänger die Seite in ihrem initialen Zustand erhalte, was unter Umständen nicht gewünscht ist.
 
-Die Interaktion wird dann durch ein Deeplink-Modul, welches die Informationen aus der Url liest virtuell wiederholt.
+Nach der Verarbeitung der in der Url mitgegebenen Zustands-Informationen durch das in Javascript geschriebene Deeplink-Modul, wird die vom Absender durchgeführte Interaktion beim Empfänger der Links virtuell wiederholt.
 
+Um dies für die Filterung der Inhalte des Medien-Archivs zu ermöglichen musste ich die für das Deeplink-Modul benötigten Informationen bei Interaktion des Users in die Url integrieren.
+
+Abgesehen von der Arbeit an den Deeplinks beschäftige ich mich in dieser Woche mit der Umsetzung des zweiten A/B-Tests, der sich mit der Verminderung der Share-Möglichkeiten befasst.
+
+Die Hypothese bei diesem Test verifiziert werden sollte behauptet, dass eine Verringerung der Share-Möglichkeiten auf vier Möglichkeiten, einen Anstieg der Gesamtanzahl der Shares zur Folge hat.
+
+Konkret lautete die Aufgabe demnach die Share-Möglichkeiten bei der Variante der Seite, von ursprünglich neun, auf vier zu minimieren.
+
+Die Verbleibenden Share-Möglichkeiten sollten Facebook, Linkedin, Twitter und Mail sein.
+
+Wie auch bei den Headline-Test, benutzte ich Google Optimize um eine CSS-Klasse zu setzen um eigens für den Test geschriebene CSS-Regeln zur Anwendung zu bringen.
+
+Ich versteckte die unerwünschten Share-Buttons indem ich deren Display-Attribut auf "none" setzte und behob im Zuge meiner Arbeit an den Share-Buttons einen Bug, der bei der Eliminierung des Google-Plus Buttons entstanden war und bis dato nicht aufgefallen war.
+
+Durch den Fehlenden Google-Plus Button war  eine Lücke in der Sharebar entstanden, die genau der breite des fehlenden Buttons. 
 
 \section{Kalenderwoche 31} \label{sec:kw3}
+
+Nach der vorläufigen Beendigung meiner Arbeit an dem Share-Test begann ich mit der Vorbereitung des dritten und umfangreichsten Tests.
+
+Die Hypothese die in diesem Fall geprüft werden sollte besagt, dass eine Änderung der Bilder von Hochglanz-Aufnahmen zu Bildern mit einem Selbst-Gemacht-Look mehr Pageviews pro Session generieren.
+
+Ich habe mich für die Umsetzung zunächst wie im Falle des Headline-Tests darum gekümmert, dass es den Editoren möglich ist ein Alternatives Foto hochzuladen.
+
+Die geschieht wieder über das für die Editoren gewohnte Wordpress-Post-Formular, in das ich ein zusätzliches Feld implementiert habe welches es erlaubt ein gänzlich neues Foto hochzuladen, oder ein anderes bereits hochgeladenes Bild auszuwählen.
+
+Um die Quelle des alternativen Bildes für den späteren Austausch in der Variante der Seite für das Javascript zugänglich zu machen ergänzte ich in den Betroffenen Templates die img-Tags um das Attribut "data-v1-src"
+
 \section{Kalenderwoche 32} \label{sec:kw3}
-\section{Kalenderwoche 34} \label{sec:kw3}
+\section{Kalenderwoche 33} \label{sec:kw3}
+\section{Kalenderwoche 35} \label{sec:kw3}
 \section{Fazit} \label{sec:faz}
 
 \newpage
@@ -250,24 +279,24 @@ Die Interaktion wird dann durch ein Deeplink-Modul, welches die Informationen au
 
 \newpage
 
-% Listen, wenn überhaupt!, bitte ans Ende und nicht an den Anfang
-\listoffigures % Liste der Abbildungen 
-\listoftables % Liste der Tabellen
-% Als letztes noch das Literaturverzeichnis
-\bibliographystyle{plainurl} % mit url
-% so wäre es ganz einfach!
-%\bibliography{ausarb,online}
-% dann mit "bibtex ausarb" bibtexen und das Literaturverzeichnis ist da
-% z.B. mit bibtopic kann man die Quellen sauber trennen
-\begin{btSect}{ausarb}
-\section*{Literaturverzeichnis}
-\btPrintCited
-\end{btSect}
-\begin{btSect}{online}
-\section*{Online-Quellen}
-\btPrintCited
-\end{btSect}
-% dann mit "bibtex ausarb1" und "bibtex ausarb2" arbeiten.
-% Wir verwenden ausarb<i> weil die Dokumenten-Datei ausarb.tex ist.
+% % Listen, wenn überhaupt!, bitte ans Ende und nicht an den Anfang
+% \listoffigures % Liste der Abbildungen 
+% \listoftables % Liste der Tabellen
+% % Als letztes noch das Literaturverzeichnis
+% \bibliographystyle{plainurl} % mit url
+% % so wäre es ganz einfach!
+% %\bibliography{ausarb,online}
+% % dann mit "bibtex ausarb" bibtexen und das Literaturverzeichnis ist da
+% % z.B. mit bibtopic kann man die Quellen sauber trennen
+% \begin{btSect}{ausarb}
+% \section*{Literaturverzeichnis}
+% \btPrintCited
+% \end{btSect}
+% \begin{btSect}{online}
+% \section*{Online-Quellen}
+% \btPrintCited
+% \end{btSect}
+% % dann mit "bibtex ausarb1" und "bibtex ausarb2" arbeiten.
+% % Wir verwenden ausarb<i> weil die Dokumenten-Datei ausarb.tex ist.
 
 \end{document}
