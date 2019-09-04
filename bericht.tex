@@ -227,7 +227,7 @@ Zum Abschluss der Woche beschäftige ich mich noch mit dem sorgfälltigen Testen
 
 Ich überprüfte sowohl die Browser-Kompatibilität als auch die einwandfreie Funktion bei verschiedenen Bildschirmauflösungen.
 
-\section{Kalenderwoche 30} \label{sec:kw3}
+\section{Kalenderwoche 30} \label{sec:kw30}
 
 Zum Abschluss der Woche kehrte ich auf Kundenwunsch zurück zur Adidas Corporate Seite um neu aufgekommene Anforderungen umzusetzen.
 
@@ -257,7 +257,7 @@ Ich versteckte die unerwünschten Share-Buttons indem ich deren Display-Attribut
 
 Durch den Fehlenden Google-Plus Button war  eine Lücke in der Sharebar entstanden, die genau der breite des fehlenden Buttons. 
 
-\section{Kalenderwoche 31} \label{sec:kw3}
+\section{Kalenderwoche 31} \label{sec:kw31}
 
 Nach der vorläufigen Beendigung meiner Arbeit an dem Share-Test begann ich mit der Vorbereitung des dritten und umfangreichsten Tests.
 
@@ -279,12 +279,37 @@ Zudem bestand die Gefahr, das die originalen Bilder geladen würden noch bevor d
 
 Die originalen Bilder könnten dem Benutzer kurze Zeit angezeigt werden bevor sie ausgetauscht würden, was den User irritieren würde, was zum Beispiel ein Anstieg der Bounce-Rate führen könnte.
 
-\section{Kalenderwoche 32} \label{sec:kw3}
+\section{Kalenderwoche 32} \label{sec:kw32}
+
+Zur Lösung der in Kapitel \ref{sec:kw31} beschriebenen Probleme musste ich zunächst ein weiteres Gameplan-A-Ticket bearbeiten.
+
+Zur allgemeinen Performance Verbesserung der Website sollte Blogweit ein Lazy Loader für Bilder implementiert werden, der es ermöglicht Bilder erst dann zu laden wenn sie im Viewport erscheinen beziehungsweise kurz davor.
+
+Dies setzt man in der Regel um indem man das src-Attribut des Img-Tags leer lässt sodass initial keine Bilder vom Browser geladen werden.
+
+Später werden die src-Attribute bei erscheinen der Bilder im Viewport gesetzt und somit das Laden der Bilder durch den Browser angestoßen.
+
+Zur Feststellung ob ein Bild im Viewport der Browser erscheint habe ich die sogenante InterserctionObserver API benutzt, die von den meisten modernen Browser angeboten wird. Für Internet Explorer gibt es zusätzliche Polyfills die eine Benutzuung der Api ermöglichen.
+
+Ich habe den IntersectionObserver in einen selbstgeschriebenen Service eingebaut, der als Singelton von allen Javascript-Modulen benutzt werden kann.
+
+Die Module übergeben sich selbst dem Service, welcher wiederum die Img-Elemente aus dem betreffenden Markup heraus sucht und dem Intersection Observer übergibt.
+
+Tauchen die Elemente nun im Viewport auf so wird der Intersection Observer getriggert und führt eine ihm mitgegebene im Lazy Loader Service definierte Funktion aus, die das Attribut "data-src" aus dem betreffenden ELement ausliest und es in das src-Attribut schriebt.
+
+Durch die Implementierung des Lazy Loader Service braucht es nun initial keine gesetzten src-Attribute mehr was eines der in Kapitel \ref{sec:kw31} beschriebenen Probleme löste.
+
+Zudem löste das Just In Time laden der Bilder auch das oben erwähnte Performance Problem.
+
+Ich setzte nun mit Google Optimize lediglich eine Globale Variable, auf die ich in der Load-Funktion des Lazy Loader Services reagieren konnte mit einer einfachen if-Abfrage.
+
+Ist die Variable gesetzt benutzt die Load-Funktion das in \ref{sec:kw31} beschriebene "data-v1-src"\ Attribut, wenn nicht dann das "data-src".
+
+\section{Kalenderwoche 33} \label{sec:kw33}
 
 
 
-\section{Kalenderwoche 33} \label{sec:kw3}
-\section{Kalenderwoche 35} \label{sec:kw3}
+\section{Kalenderwoche 35} \label{sec:kw35}
 \section{Fazit} \label{sec:faz}
 
 \newpage
