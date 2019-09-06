@@ -307,10 +307,61 @@ Ist die Variable gesetzt benutzt die Load-Funktion das in \ref{sec:kw31} beschri
 
 \section{Kalenderwoche 33} \label{sec:kw33}
 
+Den größten Teil des Kalenderwoche 33 habe ich mich damit beschäftigt den Lazy Loader in alle Module zu integrieren, die Bilder verwalten.
 
+Bei einer Bild gewaltigen Seite waren das einige Module die zu diesem Zweck angepasst werden mussten.
+Zusätzlich zu den Anpassungen musste jedes betroffene Modul im Anschluss auf Unversehrtheit überprüft werden.
+
+Als die seiten-weite Implementierung des Lazy Loaders abgeschlossen war konnte ich mich wieder der Beendigung des A/B-Tests widmen.
+
+Obwohl ich alle Templates um die nötigen Tags ergänzt hatte erschienen bei der Variante der Seite in der Suche immer noch die Originalen Bilder. Dies lag daran, dass das auf der Benutzten Elastic Search nachdem es die Seite gecrawlt hat sich die Inhalte Cachet und dann mit den gecachten Inhalten eigene Templates rendert.
+
+Nachdem ich mich mit dem Mechanismus von Elastic Search vertraut gemacht hatte habe ich meta-Tags in den Templates mit den Alternativen Bild-Adressen ergänzt, welche von Elastic Search ausgelesen und gecacht werden.
+
+Anschließend konnte ich die Elastic Search eigenen Templates ebenfalls um das "data-v1-src"-Attribut erweitern und somit einen Austausch der Bilder auch in der Suche gewährleisten.
+
+Abschließend musste ich dafür sorgen, dass die Bilder in den in Kapitel \ref{sec:kw29} beschriebenen Teasern für den nächsten Artikel ebenfalls ausgetauscht werden, wofür ich das ebenfalls in Kapitel \ref{sec:kw29} erwähnte Modul um die gewünschte Funktionalität ergänzen musste.
 
 \section{Kalenderwoche 35} \label{sec:kw35}
+
+In meiner letzten Woche als Praktikant bei Scholz \& Volkmer habe ich all meine Projekte zum Abschluss gebracht.
+
+Dies beinhaltete eine kleine Korrektur im Such-Modul, welches die gewünschten Bilder bei wenig Suchtreffern nicht anzeigte, da die übergabe der Bilder an den Lazy Loader erst später im Code erfolgte, dieser Code wurde jedoch bei sehr wenig Treffern nicht erreicht.
+
+Ebenfalls beinhaltete das Abschließen meiner Projekte das Mergen meiner Branches in den release-Branch und das Deployen, welches zunächst auf den Staging Server und nach abschließender Tests auch auf dem Production-Server stattfand.
+
+Das Deployen auf den jeweiligen Servern geschieht über eine Continious Integration Pipeline welche auf den firmeneigenen Gitlab-Server ausgeführt wird.
+
+Zum Deployen reicht es lediglich ein git Tag mit der entsprechenden Versionsnummer zu erstellen und dann auf den Git Server zu Pushen.
+
+Durch das Pushen auf den Server wird der Build-Prozess angestoßen. Nach der Beendigung des Build-Prozesses wird abhängig davon ob das erstellte Tag mit "qa/" oder "release/" beginnt auf den qa-Server oder auf den Production-Server deployt.
+
+Die Übergabe an den Kunden erfolgte bei einem Video-Call in dem ich dem Kunden meine Ergebnisse präsentierte und demonstrierte was getan werden musste auf redaktioneller Seite um mit den Tests live gehen zu können – sprich, sie starten zu können.
+
+Zusätzlich zur Fertigstellung meiner Projekte bezüglich der A/B-Tests habe ich den Rest der Woche Tickets bearbeitet, die mit Gameplpan a zu tun hatten.
+
+Unter anderen habe ich einen Bug behoben der sowohl bei Internet Explorer auftauchte als auch bei Windows Edge. Der Bug bewirkte das auf der Startseite ein unerwünschter Scrollbalken in X-Richtung erschien, der wenn man ihn bediente dazu führt das man in ein weißes Nichts scrollen konnte.
+
+Ich schrieb ein kleines Script um heraus zu finden, welches HTML-Element diesen Scrollbalken verursachte.
+
+Das Script blendete schrittweise alle Kind Elemente des in verdacht stehenden Elementes aus und wartete dann eine Sekunde, sodass ich beobachten konnte wann der Scrollbalken verschwand und damit das schadhafte Element identifizieren konnte.
+
+Ein veralteter Code im CSS des Betroffen Elements sorgte dafür das IE und ME die Breite des Elements falsch interpretierte. Nach Korrektur des CSS war der Bug folglich behoben.
+
+\newpage
 \section{Fazit} \label{sec:faz}
+
+Ich würde meine Praktikumszeit bei Scholz \& Volkmer als sehr lehrreich, produktiv, interessant und im allgemeinen sehr positiv bewerten.
+
+Ich konnte während der drei Monate meine skills allgemein als  Entwickler und auf dem Feld Web- und Javascript-Entwicklung deutlich ausbauen, was mir sehr viel Spaß bereitet.
+
+Zusätzlich zu meiner persönlichen Weiterentwicklung, kann ich nun auf eine sehr produktive Zeit zurückblicken in der ich, selbstverständlich auch durch freundliche kompetente und zu jeder Zeit erreichbare Unterstützung, sehr viel mehr geleistet habe als ich es mir am Anfang des Praktikums zugetraut hätte.
+
+Ich habe neben interessanten Technologien und Einblicken in die Arbeitswelt eines Entwicklers, ebenso Interessante Menschen kennengelernt, die mich Hoffentlich auch noch in der Zeit nach meinem Praktikum noch begleiten und mich bei meiner Weiterentwicklung unterstüzen werden.
+
+Für mich waren die letzten Monate eine sehr gute Zeit auf die ich gerne Zurückblicke, wodurch ich Scholz \& Volkmer ohne wenn und aber als Praktikumsbetrieb weiterempfehlen kann.
+
+
 
 \newpage
 
